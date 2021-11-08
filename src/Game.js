@@ -1,4 +1,7 @@
-let horsePosition = [0, 0]
+
+const randomX = Math.floor(Math.random() * (8)); //Horse Location randomizer
+const randomY = Math.floor(Math.random() * (8));
+let horsePosition = [randomX, randomY];
 let observer = null
 
 function emitChange() {
@@ -23,9 +26,16 @@ export function canMoveHorse(toX, toY) {
     const [x, y] = horsePosition
     const dx = toX - x
     const dy = toY - y
-  
-    return (
-      (Math.abs(dx) === 2 && Math.abs(dy) === 1) ||
-      (Math.abs(dx) === 1 && Math.abs(dy) === 2)
-    )
+
+    if(dy === 0){
+      return (
+        (Math.abs(dx))
+      ) 
+    } else if (dx === 0) {
+      return (
+        (Math.abs(dy))
+      )
+    }
+
+    
   }
